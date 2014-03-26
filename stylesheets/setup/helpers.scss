@@ -1,0 +1,118 @@
+// Grid
+// 1080 width grid, 1032 width content
+// 27px width columns, 40px gutters
+@mixin columns($count, $margin-right: 0) {
+  @if $margin-right > 0 {
+    margin-right: $margin-right + px;
+  }
+  width: ($count * 27px) + (($count - 1) * 40px);
+}
+
+// General CSS3 cross-browser @include
+@mixin cross-browser($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  #{$property}: $value;
+}
+
+// Border radius @include, default 2px
+@mixin border-radius($value: 2px) {
+  @include cross-browser(border-radius, $value);
+}
+
+@mixin top-border-radius($value: 2px) {
+  -webkit-border-top-left-radius: $value;
+  -webkit-border-top-right-radius: $value;
+  -moz-border-radius-topleft: $value;
+  -moz-border-radius-topright: $value;
+  border-top-left-radius: $value;
+  border-top-right-radius: $value;
+}
+
+@mixin bottom-border-radius($value: 2px) {
+  -webkit-border-bottom-left-radius: $value;
+  -webkit-border-bottom-right-radius: $value;
+  -moz-border-radius-bottomleft: $value;
+  -moz-border-radius-bottomright: $value;
+  border-bottom-left-radius: $value;
+  border-bottom-right-radius: $value;
+}
+
+@mixin left-border-radius($value: 2px) {
+  -webkit-border-top-left-radius: $value;
+  -webkit-border-bottom-left-radius: $value;
+  -moz-border-radius-topleft: $value;
+  -moz-border-radius-bottomleft: $value;
+  border-top-left-radius: $value;
+  border-bottom-left-radius: $value;
+}
+
+@mixin right-border-radius($value: 2px) {
+  -webkit-border-top-right-radius: $value;
+  -webkit-border-bottom-right-radius: $value;
+  -moz-border-radius-topright: $value;
+  -moz-border-radius-bottomright: $value;
+  border-top-right-radius: $value;
+  border-bottom-right-radius: $value;
+}
+
+@mixin no-border-radius() {
+  @include cross-browser(border-radius, 0);
+}
+
+// Box shadow @include, default 0 1px 1px rgba(0,0,0,0.2)
+@mixin box-shadow($value: 0 1px 1px rgba(0,0,0,0.2)) {
+  @include cross-browser(box-shadow, $value);
+}
+
+@mixin modal-box-shadow($value: 0 0 6px rgba(0,0,0,0.4)) {
+  @include cross-browser(box-shadow, $value);
+}
+
+@mixin no-box-shadow() {
+  @include cross-browser(box-shadow, none);
+}
+
+// Text shadow @include, default 0 1px 1px rgba(0,0,0,0.2)
+@mixin text-shadow($value: 0 1px 1px rgba(0,0,0,0.2)) {
+  @include cross-browser(text-shadow, $value);
+}
+
+@mixin no-text-shadow() {
+  @include cross-browser(text-shadow, none);
+}
+
+// Transition @include
+@mixin transition($property, $speed) {
+  @include cross-browser(transition, $property $speed ease);
+}
+
+// Opacity
+@mixin opacity($value) {
+  filter: alpha(opacity=#{$value});
+  opacity: ($value / 100);
+  zoom: 1;
+}
+
+// Font sizes
+@mixin font-size($size: $base-font-size) {
+  font-size: $size + px;
+  font-size: ($size / 10) + rem;
+}
+
+// Clearfix @extend
+%clear {
+
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+// Ellipsis for truncating text @extend
+%ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

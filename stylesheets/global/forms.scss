@@ -1,0 +1,93 @@
+// Form layout
+.form-row {
+  @extend %clear;
+  margin: 0 0 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.form-column {
+  float: left;
+  margin: 0 2rem 0 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+// Label
+label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 0.5rem;
+
+  .description {
+    color: $secondary-text;
+    font-weight: normal;
+  }
+
+  &.error {
+    color: $error;
+  }
+}
+
+// Text input
+input[type='text'],
+input[type='password'],
+input[type='color'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='range'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+textarea,
+.textbox {
+  @include border-radius;
+  @include transition(border-color, 0.1s);
+  border: 1px solid $border;
+  padding: 8px 12px;
+
+  &.disabled {
+    background: $background-disabled;
+    color: $secondary-text;
+    cursor: not-allowed;
+  }
+
+  &.error {
+    border-color: $error;
+
+    &:focus {
+      border-color: $error;
+    }
+  }
+
+  &:focus {
+    border-color: $border-dark;
+  }
+}
+
+// Placeholder text
+::-webkit-input-placeholder {
+  color: $secondary-text;
+}
+
+:-moz-placeholder {
+  color: $secondary-text;
+}
+
+::-moz-placeholder {
+  color: $secondary-text;
+}
+
+:-ms-input-placeholder {
+  color: $secondary-text;
+}

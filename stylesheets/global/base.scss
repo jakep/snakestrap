@@ -1,0 +1,34 @@
+* {
+  @include cross-browser(box-sizing, border-box);
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: $primary-text;
+  font-family: $base-font-family;
+  font-size: 1.4em; // Change to $base-font-size once Chrome fixes their bug: https://code.google.com/p/chromium/issues/detail?id=319623
+}
+
+input,
+button,
+textarea {
+  border: 0;
+  color: $primary-text;
+  font-family: $base-font-family;
+  font-size: inherit;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+
+  &:focus {
+    @include cross-browser(outline, none);
+  }
+}
+
+// Attached when modals are shown to disable scrolling
+body.modal-active {
+  overflow: hidden;
+}

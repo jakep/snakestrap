@@ -1,0 +1,29 @@
+body {
+  margin: 100px;
+}
+
+.unit {
+  margin: 0 0 30px;
+}
+
+.unit-header {
+  @include font-size(18);
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+
+.text-error {
+  color: $error;
+}
+
+.text-warning {
+  color: $warning;
+}
+
+.text-alert {
+  color: $alert;
+}
+
+.text-success {
+  color: $success;
+}

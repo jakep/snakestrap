@@ -1,0 +1,44 @@
+// Overall type styling
+a,
+a:visited {
+  @include transition(color, 0.1s);
+  color: $primary-link;
+
+  &:hover {
+    color: $primary-link-light;
+  }
+}
+
+p {
+  line-height: 150%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+abbr {
+  cursor: help;
+  border-bottom: 1px dotted $secondary-text;
+}
+
+code,
+kbd {
+  @include border-radius;
+  font-family: $code-font-family;
+  padding: 1px 5px 2px;
+  white-space: nowrap;
+}
+
+code {
+  background: $background-light;
+}
+
+kbd {
+  background: $primary-text;
+  color: $white;
+}

@@ -1,0 +1,41 @@
+.modal {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: $z-top;
+
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 1%, rgba(0,0,0,0.85) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.4)), color-stop(1%,rgba(0,0,0,0.4)), color-stop(100%,rgba(0,0,0,0.85)));
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 1%,rgba(0,0,0,0.85) 100%);
+  background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 1%,rgba(0,0,0,0.85) 100%);
+  background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 1%,rgba(0,0,0,0.85) 100%);
+  background: radial-gradient(ellipse at center,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 1%,rgba(0,0,0,0.85) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#d9000000',GradientType=1 );
+}
+
+.modal-container {
+  @include columns(8);
+  @include modal-box-shadow;
+  @include border-radius;
+  background: $white;
+  left: 50%;
+  margin: -72px 0 0 -248px;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+}
+
+.modal-close {
+  @extend .ss-icon;
+  @include font-size(12);
+  color: $secondary-text;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  &:hover {
+    color: $primary-text;
+  }
+}

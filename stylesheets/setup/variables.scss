@@ -1,0 +1,29 @@
+// Colors
+$primary-text: #555555;
+$secondary-text: lighten($primary-text, 40%);
+$primary-link: #2486c4;
+$primary-link-light: lighten($primary-link, 4%);
+$purchase: #61b969;
+$purchase-light: lighten($purchase, 6%);
+$border: #cccccc;
+$border-dark: darken($border, 20%);
+$background-light: #ededed;
+$background-disabled: #ededed;
+
+$white: #ffffff;
+
+$error: #c42424;
+$warning: #c4ac24;
+$alert: #244dc4;
+$success: #61b969;
+
+// Typography
+$base-font-family: 'Open Sans', Cambria, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$code-font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
+$base-font-size: 14;
+
+// Layering
+$z-top: 1000;
+$z-middle: 100;
+$z-bottom: 10;
+$z-base: 1;
