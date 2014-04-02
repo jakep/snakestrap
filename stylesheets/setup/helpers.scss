@@ -1,11 +1,12 @@
 // Grid
-// 1080 width grid, 1032 width content
-// 27px width columns, 40px gutters
-@mixin columns($count, $margin-right: 0) {
-  @if $margin-right > 0 {
-    margin-right: $margin-right + px;
+@mixin make-column($count, $has-margin: true) {
+  $grid-column-width: ($grid-width - (($grid-column-count - 1) * $grid-gutter-width)) / $grid-column-count;
+
+  @if $has-margin {
+    float: left;
+    margin-right: $grid-gutter-width;
   }
-  width: ($count * 27px) + (($count - 1) * 40px);
+  width: ($count * $grid-column-width) + (($count - 1) * $grid-gutter-width);
 }
 
 // General CSS3 cross-browser @include
@@ -100,13 +101,23 @@
   font-size: ($size / 10) + rem;
 }
 
+// Square element
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
 // Clearfix @extend
 %clear {
 
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
   &:after {
     clear: both;
-    content: '';
-    display: table;
   }
 }
 

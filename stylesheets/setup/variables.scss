@@ -1,3 +1,8 @@
+// Grid
+$grid-column-count: 16;
+$grid-width: 1032px; // Change variably with media queries
+$grid-gutter-width: 40px;
+
 // Colors
 $primary-text: #555555;
 $secondary-text: lighten($primary-text, 40%);
