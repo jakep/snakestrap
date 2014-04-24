@@ -1,5 +1,5 @@
 // Grid
-@mixin make-column($count, $has-margin: true) {
+@mixin column($count, $has-margin: true) {
   $grid-column-width: ($grid-width - (($grid-column-count - 1) * $grid-gutter-width)) / $grid-column-count;
 
   @if $has-margin {

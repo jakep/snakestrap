@@ -1,4 +1,6 @@
-* {
+*,
+*:before,
+*:after {
   @include cross-browser(box-sizing, border-box);
 }
 

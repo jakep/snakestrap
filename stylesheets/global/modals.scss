@@ -16,7 +16,7 @@
 }
 
 .modal-container {
-  @include make-column(8);
+  @include column(8);
   @include modal-box-shadow;
   @include border-radius;
   background: $white;
